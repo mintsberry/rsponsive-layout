@@ -1,0 +1,176 @@
+/* 初始化全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: #222;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+li {
+  list-style: none;
+}
+/* 头部 */
+header {
+  display: flex;
+  min-height: 60px;
+  padding: 0 calc(50% - 600px);
+  background-color: #013D06;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+header > .logo {
+  display: flex;
+  margin-right: 24px;
+}
+header > .logo > img {
+  width: 40px;
+}
+header .title {
+  font-size: 22px;
+  color: white;
+  line-height: 40px;
+}
+header > input,
+header > label {
+  display: none;
+}
+
+header > .nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+header > .nav .item {
+  padding: 10px 16px;
+  color: rgba(255, 255, 255, .5);
+  cursor: pointer;
+}
+header > .nav  .active {
+  color: #fff;  
+} 
+@media only screen and (max-width: 960px) {
+  header {
+    justify-content: space-between;
+    padding: 0 8px;
+    flex-wrap: wrap;
+  }
+  header > label {
+    display: block;
+  }
+  header .nav {
+    display: none;
+  }
+  header > input:checked+.nav {
+    display: block;
+    flex-basis: 100%;
+  }
+}
+/* 主题 */
+main {
+  padding: 0 calc(50% - 600px);
+}
+/* 轮播图 */
+.swiper {
+  width: 100%;
+  height: 375px;
+  white-space: nowrap;
+  font-size: 0;
+  transition: all .5s ease-in;
+  overflow: hidden;
+}
+
+.swiper .wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* 卡片 */
+.card {
+  display: flex;
+  margin-top: 16px;
+  width: 100%;
+  font-size: 0;
+}
+.card-left,
+.card-right {
+  box-sizing: border-box; 
+  border-radius: 4px;
+  vertical-align:top;
+  border: 1px solid rgba(0,0,0,.125);
+}
+.card-left {
+  width: 58%;
+  margin-right: 1%;
+  background-color: #f8f9fa;
+  color: #333;
+  vertical-align:top
+}
+.card-right {
+  background-color: #17a2b8;
+  width: 41%;
+  color: white;
+}
+.card-header {
+  box-sizing: border-box;
+  font-size: 24px; 
+  background-color: rgba(0,0,0,.03);
+  width: 100%;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.card-body {
+  font-size: 14px;
+  padding: 16px;
+}
+.card-body .info-item {
+  display: flex;
+  justify-content: space-between;
+}
+.card-body .info-item~.info-item {
+  margin-top: 16px;
+}
+
+.card-body .info-item .time {
+  text-align: right;
+}
+
+.bg-green {
+  background-color: #28a745 !important;
+}
+
+
+@media only screen and (max-width: 960px) {
+  main {
+    padding: 8px;
+  }
+  .card {
+    display: block;
+  }
+  .card-left,
+  .card-right {
+    width: 100%;
+  }
+  .card-right {
+    margin-top: 16px;
+  }
+  footer {
+    padding: 8px !important;
+  }
+}
+/* 底部 */
+footer {
+  padding: 8px calc(50% - 600px);
+  margin-top: 30px;
+  background-color: #013D06;
+}

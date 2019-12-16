@@ -1,0 +1,170 @@
+/* 初始化全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: #222;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+li {
+  list-style: none;
+}
+/* 头部样式 */
+header {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 0 calc(50% - 600px);
+  min-height: 50px;
+  line-height: 50px;
+  background-color: rgb(244, 115, 157);
+}
+
+header .item {
+  padding: 0px 15px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+header > .btn {
+  display: flex;
+}
+header > .btn > label,
+header > .btn > input {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  main {
+    padding: 8px !important;
+  }
+}
+@media screen and (max-width: 960px) {
+  header {
+    display: block;
+    padding-left: 8px;
+  }
+  header .item {
+    display: none;
+  }
+  header > .btn {
+    display: block;
+  }
+  header > .btn > label {
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+  header > .btn > input:checked~.item  {
+    display: block;
+    padding: 0;
+  }
+}
+
+main {
+  padding: 0 calc(50% - 600px);
+}
+
+.banner {
+  display: flex;
+  height: 90px;
+  margin-bottom: 30px;
+}
+
+.banner > img {
+  margin-right: 40px;
+}
+
+.banner > .ad {
+  flex: 1;
+  background-image: url('../img/hello.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* 切换卡导航 */
+.tab-card {
+  margin-bottom: 32px;
+}
+.tab-nav {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 16px;
+}
+.tab-nav > li {
+  padding: 8px 16px;
+  margin-bottom: -1px;
+  color: #ed145b;
+  cursor: pointer;
+}
+.tab-nav > li:hover:not(.active) {
+  background-color: #999;
+  border-radius: 4px 4px 0 0;
+  color: white;
+}
+.tab-nav > .active {
+  border: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+  background: white;
+  border-bottom: none;
+  color: #666;
+}
+/* 切换卡内容 */
+.tab-wrapper {
+  position: relative;
+}
+.tab-wrapper .content {
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0;
+}
+.tab-wrapper .content > li {
+  display: inline-block;
+  text-align: center;
+  width: 23.5%;
+  flex: 1;
+  font-size: 14px;
+  color: #ed145b;
+}
+.tab-wrapper .content > li:hover {
+  background-color: #fff4f8;
+}
+.tab-wrapper .content > li~li {
+  margin-left: 2%;
+}
+.tab-wrapper .content > li > div {
+  padding-top: 100%;
+  position: relative;
+}
+.tab-wrapper .content > li span {
+  display: inline-block;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tab-wrapper .content > li img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.content~.content {
+  display: none;
+}
+@media only screen and (max-width: 960px) {
+  .tab-wrapper > .content > li{
+    width: 100%;
+  }
+  .tab-wrapper > .content > li~li {
+    margin: 16px 0;
+  }
+}
